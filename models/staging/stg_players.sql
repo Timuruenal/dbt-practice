@@ -1,6 +1,6 @@
 WITH players AS (
 			SELECT *
-			FROM dbt_practice.landing.players
+			FROM {{ source('transfermarkt', 'players')}}
 )
 SELECT 
 			CAST(PLAYER_ID 								AS INTEGER) 	AS PLAYER_ID,

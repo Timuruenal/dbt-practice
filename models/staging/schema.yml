@@ -1,0 +1,10 @@
+sources:
+  - name: transfermarkt
+    database: DBT_PRACTICE  
+    schema: LANDING  
+    tables:
+      - name: players
+      - name: clubs
+      - name: games
+      - name: competitions
+      - name: appearances

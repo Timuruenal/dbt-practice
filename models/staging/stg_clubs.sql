@@ -1,6 +1,6 @@
 WITH clubs AS (
 SELECT 		*
-FROM 		dbt_practice.landing.clubs
+FROM 		{{ source('transfermarkt', 'clubs')}}
 )
 SELECT 		
 			CAST(CLUB_ID 									AS INTEGER) 	AS CLUB_ID,
