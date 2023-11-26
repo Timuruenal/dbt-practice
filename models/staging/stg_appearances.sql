@@ -1,8 +1,7 @@
 WITH appearances AS (
 SELECT 		*
-FROM 		dbt_practice.landing.appearances
+FROM 		{{ source('transfermarkt', 'appearances')}}
 )
-
 SELECT 		
 			CAST(APPEARANCE_ID 								AS STRING) 		AS APPEARANCE_ID,
 			CAST(GAME_ID 									AS INTEGER) 	AS GAME_ID,
@@ -34,4 +33,4 @@ SELECT
                     TRIM(NVL(ASSISTS                        , '')), '||',
                     TRIM(NVL(MINUTES_PLAYED                 , ''))
 			))) 															AS AppearanceHashDiff
-FROM 		appearances
+FROM 		appearances   
